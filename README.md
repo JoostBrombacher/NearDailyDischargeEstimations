@@ -1,7 +1,6 @@
 
 
-# NEAR DAILY DISCHARGE ESTIMATIONS IN HIGH LATITUDES FROM SENTINEL-1 and 2:
-# A Case Study for the Icelandic Thjórsá River
+# NEAR DAILY DISCHARGE ESTIMATIONS IN HIGH LATITUDES FROM SENTINEL-1 and 2: A Case Study for the Icelandic Thjórsá River
 
 - Author: Joost Brombacher
 - Date: 20-03-2019
