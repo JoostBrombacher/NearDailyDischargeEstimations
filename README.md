@@ -1,8 +1,7 @@
 
-||-----------------------------------------------------------------------------||
-||  NEAR DAILY DISCHARGE ESTIMATIONS IN HIGH LATITUDES FROM SENTINEL-1 and 2:  ||
-||                 A Case Study for the Icelandic Thjórsá River                ||
-||-----------------------------------------------------------------------------||
+
+# NEAR DAILY DISCHARGE ESTIMATIONS IN HIGH LATITUDES FROM SENTINEL-1 and 2:
+# A Case Study for the Icelandic Thjórsá River
 
 - Author: Joost Brombacher
 - Date: 20-03-2019
@@ -11,7 +10,7 @@
   adapted without any restrictions. Publishing results derived from these 
   scripts must be accompanied with proper referencing. 
 
-||--------------------------------- SETUP -------------------------------------||
+# SETUP
 
 - The scripts, input files, and output files are entitled to their specific 
   folders. When downloading the scripts and the data, a new folder should be 
@@ -35,7 +34,7 @@
   After every run of the scripts the output files are allocated to their 
   corresponding output subfolders.
 
-||------------------------------- RUN SCRIPTS ---------------------------------||
+# RUN SCRIPTS
 
 - To run the model the 01-RunScript.R file is the only file that needs to be 
   opened. The other R-scripts consist of functions which are necessary for the 
@@ -71,7 +70,7 @@
   R itself. 
 
   
-||---------------------------------- CONTACT ----------------------------------||
+# CONTACT
 
 - For issues with the script or possible bugs, one can contact the author of the
   scripts at joost.brombacher@wur.nl or try to contact one of the other authors 
