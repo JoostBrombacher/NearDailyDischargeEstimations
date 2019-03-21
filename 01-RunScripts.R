@@ -152,5 +152,5 @@ stdev.fun(val.start,val.end,modelname,season,MNDWI.Mean,"Mean")
 ## - Always endCluster() when rerunning the script to prevent errors
 ## - When "cannot open the connection" error occurs, run endCluster()
 endCluster()
-setwd(default)  
+setwd(default)
 
