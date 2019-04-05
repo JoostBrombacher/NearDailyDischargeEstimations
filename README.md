@@ -16,7 +16,7 @@
   created which includes the data and R-studio folders. The directory of this
   folder will be the "default" directory. 
   
-- The data can be downloaded from Google Drive using this link: 
+- The data (9.5 GB) can be downloaded from Google Drive using this link: 
   https://drive.google.com/open?id=1t8VAjnbjM3zAD2tsefz4fJgi8vlZAMPm
   
 - The data folder consists of a folder for input files and a folder for output 
