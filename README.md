@@ -17,7 +17,7 @@
   folder will be the "default" directory. 
   
 - The data can be downloaded from Google Drive using this link: 
-  https://drive.google.com/open?id=13woJzSvZml8zVxWY01JPUF6lUkmmk1kQ
+  https://drive.google.com/open?id=1t8VAjnbjM3zAD2tsefz4fJgi8vlZAMPm
   
 - The data folder consists of a folder for input files and a folder for output 
   files. All the input files are included in the download. The output files 
