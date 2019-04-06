@@ -69,9 +69,9 @@ obs.fun <- function(start,end,pr){
           legend.key = element_rect(color = 'black',fill='grey100'),
           plot.background = element_rect(fill = "white",colour="black"))
   
-  minQ <- round(min(observed$Q,na.rm=TRUE),0)
-  maxQ <- round(max(observed$Q,na.rm=TRUE),0)
-  diffQ <- round((maxQ-minQ)/4,0)
+  minQ <- round(min(observed$Q,na.rm=TRUE),-1)
+  maxQ <- round(max(observed$Q,na.rm=TRUE),-1)
+  diffQ <- round((maxQ-minQ)/4,-1)
   
   p2 <- ggplot(observed, aes(date)) +
     geom_line(aes(y=Q, colour = "  Observed"),size=0.5) +
