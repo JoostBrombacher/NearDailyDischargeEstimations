@@ -4,7 +4,7 @@
 
 - Author: Joost Brombacher
 - Date: 05-04-2019
-- Institute: Wageningen University
+- Institute: Wageningen University & Research
 - Disclaimer: The scripts, data, and the obtained results can be reviewed and 
   adapted without any restrictions. Publishing results derived from these 
   scripts must be accompanied with proper referencing. 
