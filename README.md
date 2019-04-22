@@ -1,6 +1,6 @@
 
 
-# Near-Daily Discharge Estimation in High Latitudes from Sentinel-1 and 2: A Case Study for the Icelandic Thjórsá River
+# Near-Daily Discharge Estimation in High Latitudes from Sentinel-1 and 2: A Case Study for the Icelandic Þjórsá River
 
 - Author: Joost Brombacher
 - Date: 05-04-2019
