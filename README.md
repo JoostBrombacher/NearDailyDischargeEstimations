@@ -11,10 +11,7 @@
 
 # SETUP
 
-- The scripts, input files, and output files are entitled to their specific 
-  folders. When downloading the scripts and the data, a new folder should be 
-  created which includes the data and R-studio folders. The directory of this
-  folder will be the "default" directory. 
+- The scripts, input files, and output files are entitled to their specific folders. When downloading the scripts and the data, a new folder should be created which includes the data and R-studio folders. The directory of this folder will be the "default" directory. 
   
 - The data has not been made publically available by the Icelandic Meteorological 
   Office and Landsvirkjun. Therefore, reviewers are asked to contact the authors 
