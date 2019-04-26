@@ -11,7 +11,7 @@
 
 - The scripts, input files, and output files are entitled to their specific folders. When downloading the scripts and the data, a new folder should be created which includes the data and R-studio folders. The directory of this folder will be the "default" directory. 
   
-- The data has not been made publically available by the Icelandic Meteorological Office and Landsvirkjun. Therefore, reviewers are asked to contact the authors for instructions to download the data. We ask not to share and publish the datasets, and only use it for reviewing purposes. 
+- The discharge observation dataset has not been made publically available by the Icelandic Meteorological Office and Landsvirkjun. Therefore, reviewers are asked to contact the authors for instructions to download the data. We ask not to share and publish the datasets, and only use it for reviewing purposes. 
   
 - The data folder consists of a folder for input files and a folder for output files. All the input files are included in the download. The output files need to be created by running the scripts. All the subfolders in the input folder should keep their names, otherwise the scripts are not able to find them.
   
