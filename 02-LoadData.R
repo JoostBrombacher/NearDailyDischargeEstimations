@@ -38,22 +38,18 @@ library(scales)
 Sys.setlocale(category="LC_ALL",locale="english")
 
 # Load Discharge Observations (2015-2018)
-data.Q.obs <- read.table("Data/Input/Discharge/VHM30-2015-2018.txt",sep=";",header=TRUE,row.names=NULL)
-data.Q.obs <- data.frame(date=as.POSIXct(data.Q.obs$date),Q=data.Q.obs$Q)
-data.Q.val <- subset(data.Q.obs, date > as.POSIXlt("2018-05-01 00:00:00"))
-data.Q.val <- subset(data.Q.val, date < as.POSIXlt("2018-08-01 00:00:00"))
-data.Q.est <- subset(data.Q.obs, date > as.POSIXlt("2017-01-01 00:00:00"))
-data.Q.est <- subset(data.Q.est, date < as.POSIXlt("2018-11-01 00:00:00"))
+Q.obs <- read.table("Data/Input/Discharge/VHM30-2015-2018.txt",sep=";",header=TRUE,row.names=NULL)
+Q.obs <- data.frame(date=as.POSIXct(Q.obs$date),Q=Q.obs$Q)
 
 # Visualize the discharge observations for specific periods
 obs.fun <- function(start,end,pr){
   start <- as.POSIXct(start)
   end <- as.POSIXct(end)
   
-  observed <- subset(data.Q.obs, date > start)
+  observed <- subset(Q.obs, date > start)
   observed <- subset(observed, date < end)
 
-  p1 <- ggplot(data.Q.obs, aes(date)) +
+  p1 <- ggplot(Q.obs, aes(date)) +
     geom_line(aes(y=Q, colour = "  Observed"),size=0.2) +
     geom_vline(xintercept=start,linetype='dashed',size=0.5) +
     geom_vline(xintercept=end,linetype='dashed',size=0.5) +
@@ -69,9 +65,9 @@ obs.fun <- function(start,end,pr){
           legend.key = element_rect(color = 'black',fill='grey100'),
           plot.background = element_rect(fill = "white",colour="black"))
   
-  minQ <- round(min(observed$Q,na.rm=TRUE),-1)
-  maxQ <- round(max(observed$Q,na.rm=TRUE),-1)
-  diffQ <- round((maxQ-minQ)/4,-1)
+  minQ <- round(min(observed$Q,na.rm=TRUE),0)
+  maxQ <- round(max(observed$Q,na.rm=TRUE),0)
+  diffQ <- round((maxQ-minQ)/4,0)
   
   p2 <- ggplot(observed, aes(date)) +
     geom_line(aes(y=Q, colour = "  Observed"),size=0.5) +
@@ -103,6 +99,7 @@ extent <- c(421151.3, 430133, 381880, 392300)
 setwd(paste(default,"/Data/Input/Sentinel-1/ValidationTraining/",modelname,sep=""))
 files <- list.files(pattern="*.tif", full.names=T)
 r.ref <- raster(files[1])
+r.brick <- brick(files[1])
 r.ref <- projectRaster(r.ref,crs=crs,res=res,extent=extent)
 setwd(default)
 

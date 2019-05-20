@@ -22,7 +22,7 @@
 ## SETUP AND PRESETS ##
 #######################
 ## - Set default working directory to the desired workspace
-default <- "D:/NearDailyDischargeEstimations/"
+default <- "C:/Users/Joost/Documents/WUR/Paper/"
 setwd(default)
 
 ## - Set give name of the model and select the desired 
@@ -49,8 +49,8 @@ source("R-studio/12-PostProcessing.R")
 ## - View observed discharge from the Icelandic Meteorological Office and Landsvirkjun
 ##   for a specific period of interest. Select TRUE for printing the selected dataframe. 
 ## - The dates can range from 2015-01-01 till 2018-11-01.
-start.plot <- "2017-04-01 00:00:00"
-end.plot <- "2017-10-01 00:00:00"
+start.plot <- "2017-08-19 00:00:00"
+end.plot <- "2017-08-20 00:00:00"
 obs.fun(start.plot,end.plot,TRUE)
 
 ##########################
@@ -69,7 +69,7 @@ masks <- c(MNDWI.Edge,MNDWI.Mean,MNDWI.Peak)
 ###################################
 ## - Create a Random Forest model for chosen modelname and season.
 ## - If model is already created; overwrite = FALSE.
-modelRF <- RandomForest.fun(modelname,season,FALSE)
+modelRF <- RandomForest.fun(modelname,season,TRUE)
 
 ###############################
 ## CLASSIFY VALIDATION IMAGE ##
@@ -100,7 +100,7 @@ val <- val.fun(val.check,masks,season,modelname,TRUE)
 start <- "2017-04-01 00:00:00"
 end <- "2018-10-01 00:00:00"
 obs.fun(start,end,FALSE)
-class <- class.fun(start,end,modelRF,modelname,"Validation",season,FALSE)
+class <- class.fun(start,end,modelRF,modelname,"Validation",season,TRUE)
 
 ##########################################
 ## ESTIMATE DISCHARGE VALIDATION PERIOD ##

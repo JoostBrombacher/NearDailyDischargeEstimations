@@ -111,6 +111,10 @@ Qestval.fun <- function(area,name,period,overwrite){
           text = element_text(size=18),
           plot.background = element_rect(fill = "white",colour="black"))
   
+  minWe <- round(min(data$We,na.rm=TRUE),0)
+  maxWe <- round(max(data$We,na.rm=TRUE),0)
+  diffWe <- round((maxWe-minWe)/4,-1)
+  
   s3 <- ggplot(data, aes(Q,We),theme(plot.background = element_rect(fill = "grey90"))) +
     geom_line(aes(x=q,y=scat$Q95),colour="grey",size=0.5,alpha=0.5) + 
     geom_line(aes(x=q,y=scat$Q05),colour="grey",size=0.5,alpha=0.5) +
@@ -118,9 +122,10 @@ Qestval.fun <- function(area,name,period,overwrite){
     geom_line(aes(x=q,y=scat$rating, colour = "  Estimated"),size=0.75) +
     geom_point(aes(data$Q,data$We), colour = 'black')+
     labs(y = 'Effective Width (m)\n',x = expression(atop("",paste("Discharge (", m^3, "/", s,")", sep="")))) +
+    #scale_y_continuous(breaks = seq(round(minWe,-1), round(maxWe,-1), by = diffWe),limits=c(minWe-0.05*minWe,maxWe+0.05*minWe)) +
     scale_color_manual(values=c("red"), 
-                       labels=c(bquote(" "~ W[e] == .(signif(a.rating,2))~Q^~.(signif(b.rating,2))~" "))) +
-    annotate("text", x= min(data$Q)+0.15*(max(data$Q)-min(data$Q)), y=min(data$We)+0.88*(max(data$We)-min(data$We)),
+                       labels=c(bquote(" "~ W[e] == .(signif(a.rating,2))~Q^~.(formatC(signif(b.rating,2),digits=2,format="fg",flag="#"))~" "))) +
+    annotate("text", x= min(data$Q)+0.15*(max(data$Q)-min(data$Q)), y=minWe+0.90*(maxWe-minWe),
              label = paste("paste(RMSE, \" = ",signif(RMSE.scat,2),"\")",sep=""),
              parse = TRUE,size=5.5) +
     theme_stata() +

@@ -44,6 +44,7 @@ MDG.fun <- function(modelname,season){
   bRF <- ggplot(data = dg,aes(x=seq(1,9,1))) + 
     geom_point(aes(y = MDG,shape=" Summer  ",colour=" Summer  "),size=3,color="black",pch=16) +
     scale_x_continuous(breaks = seq(1,9,1), labels=dg$metric) +
+    scale_y_continuous(breaks = seq(0,200,by=50), limits=c(0,150)) +
     xlab("Metrics") +
     ylab("\nMean Decrease Gini") +
     theme_stata() + 
@@ -132,12 +133,9 @@ stdev.fun <- function(start,end,modelname,season,maskraster,choice){
     dir.create(path=path)
   }
   setwd(path)
-
+  
   # Export the results
   name <- paste("02-StandardDeviation_MNDWI-",choice,".tif",sep="")
   writeRaster(SD,name,format="raster", overwrite=TRUE)
   return(SD)
 }
-
-
-

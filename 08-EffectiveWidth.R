@@ -25,10 +25,7 @@ We.fun <- function(start,end,maskraster,images,shape,l.river,period,choice,name,
       files.subset <- c(files.subset,files[i])
     }
   }
-  
-  # Load the observed discharge data
-  discharge <- read.table(paste(default,"/Data/Input/Discharge/VHM30-2015-2018.txt",sep=""),sep=";",header=TRUE,row.names = NULL)
-  
+
   # Load the MNDWI-mask
   maskraster <- projectRaster(maskraster,crs=crs,res=res)
   maskraster <- crop(maskraster,extent(shape))
@@ -91,7 +88,7 @@ We.fun <- function(start,end,maskraster,images,shape,l.river,period,choice,name,
     We <- (w.area*pixel.area)/l.river
     
     # Load the observed discharge 
-    Q <- discharge$Q[as.POSIXlt(discharge$date) == date]
+    Q <- Q.obs$Q[as.POSIXlt(Q.obs$date) == date]
     
     # Add observed discharge and effective width to a data.frame
     statList[[i]] <- data.frame(date=date, We=We, Q=Q) # create a data.frame to save statistics

@@ -108,10 +108,10 @@ Qestlong.fun <- function(area,name,period,ts.period){
     scale_x_date(date_breaks = "months" , date_labels = "%b") +
     labs(y = expression(atop(paste("Discharge (", m^3, "/", s,")",sep=""),"")),x='\n Date') +
     scale_color_manual(values=c("grey","firebrick2","blue")) +
-    annotate("text", x = min(data$date)+0.9*(max(data$date)-min(data$date)),y = min(data$est.Q05,na.rm=TRUE)+0.90*(max(data$est.Q95,na.rm=TRUE)-min(data$est.Q05,na.rm=TRUE)+50),
+    annotate("text", x = min(data$date)+0.9*(max(data$date)-min(data$date)),y = 815,
              label = paste("paste(KGE, \" = ",KGEnt,"\")",sep=""),
              parse = TRUE,size=4.5) +
-    annotate("text", x = min(data$date)+0.9*(max(data$date)-min(data$date)),y = min(data$est.Q05,na.rm=TRUE)+0.85*(max(data$est.Q95,na.rm=TRUE)-min(data$est.Q05,na.rm=TRUE)+50),
+    annotate("text", x = min(data$date)+0.9*(max(data$date)-min(data$date)),y = 785,
              label = paste("paste(RMSE, \" = ",RMSEnt,"\")",sep=""),
              parse = TRUE,size=4.5) +
     theme_stata() +
@@ -150,7 +150,7 @@ Qestlong.fun <- function(area,name,period,ts.period){
   start.zoom <- as.POSIXct("2017-12-15 00:00:00")
   end.zoom <- as.POSIXct("2018-01-15 00:00:00")
   
-  observed <- subset(data.Q.obs, date > start.zoom)
+  observed <- subset(Q.obs, date > start.zoom)
   observed <- subset(observed, date < end.zoom)
 
   p2 <- ggplot(observed, aes(date)) +
